@@ -1,5 +1,8 @@
 # Queue-Based Load Leveling with Azure and Terraform
 
+Ricardo Urbina Ospina - A00395489
+Kevin Steven Nieto Curaca - A00395466
+
 ## Overview
 This project demonstrates when and how to apply the **Queue-Based Load Leveling** pattern using **Terraform** to define infrastructure as code. The main goal is to create an **Azure Function** that prints incoming messages. This function is triggered by messages arriving at our second infrastructure component: **Azure Service Bus**, which includes a **queue** that manages and routes all incoming requests.
 
