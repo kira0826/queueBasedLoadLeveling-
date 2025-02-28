@@ -39,7 +39,7 @@ resource "azurerm_function_app_function" "servicebus_trigger" {
   name            = var.name_function
   function_app_id = azurerm_windows_function_app.wfa.id
   language        = "Javascript"
-  
+
 
   file {
     name    = "index.js"
@@ -52,7 +52,7 @@ resource "azurerm_function_app_function" "servicebus_trigger" {
         "type" : "serviceBusTrigger",
         "direction" : "in",
         "name" : "queueItem",
-        "queueName": azurerm_servicebus_queue.ingesoft5-servicebus-queue.name ,
+        "queueName" : azurerm_servicebus_queue.ingesoft5-servicebus-queue.name,
         "connection" : "AzureWebJobsServiceBus"
       }
     ]
