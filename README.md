@@ -52,7 +52,45 @@ The JavaScript code connects to the Service Bus queue to send a set of messages.
 
 ## Conclusion
 With this setup, we successfully simulate the **Queue-Based Load Leveling** pattern using **Azure** infrastructure. The system consists of:
-- A **JavaScript application** to send messages.
+- A **JavaScript application** to send messages:
+
+```
+  const { ServiceBusClient } = require("@azure/service-bus");
+
+const connectionString =
+  "Endpoint=sb://<ingesoft5-service-bus-name>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<PRIMARY_KEY>";
+const queueName = "<ingesoft5-queue-name>";
+
+async function sendMessage() {
+  const sbClient = new ServiceBusClient(connectionString);
+  const sender = sbClient.createSender(queueName);
+
+  try {
+    const message = {
+      body: { text: `Hola desde Azure! ${new Date().toISOString()}` }, // Mensaje único
+      contentType: "application/json",
+    };
+
+    console.log("Enviando mensaje:", message.body);
+    await sender.sendMessages(message);
+    console.log("✅ Mensaje enviado con éxito!");
+  } catch (error) {
+    console.error("❌ Error enviando mensaje:", error);
+  } finally {
+    await sender.close();
+    await sbClient.close();
+  }
+}
+
+const X = 5;
+
+(async () => {
+  for (let i = 0; i < X; i++) {
+    await sendMessage(i);
+  }
+})();
+
+```
 - An **Azure Service Bus queue** to handle incoming requests.
 - An **Azure Function** triggered by the queue.
 
