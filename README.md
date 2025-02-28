@@ -56,5 +56,10 @@ With this setup, we successfully simulate the **Queue-Based Load Leveling** patt
 - An **Azure Service Bus queue** to handle incoming requests.
 - An **Azure Function** triggered by the queue.
 
+### Architecture diagram
+
+![image](https://github.com/user-attachments/assets/f9ecd6fe-38e3-4c8c-a7ef-c6d440b34cc0)
+
+
 This approach ensures load balancing and decouples message producers from consumers, enhancing system scalability, maximize availabily, cost control and reliability.
 
