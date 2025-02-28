@@ -29,6 +29,6 @@ const X = 5;
 
 (async () => {
   for (let i = 0; i < X; i++) {
-    await sendMessage(i);
+    await sendMessage();
   }
 })();
