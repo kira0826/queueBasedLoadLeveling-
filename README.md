@@ -35,7 +35,7 @@ resource "azurerm_function_app_function" "servicebus_trigger" {
 
 ## Project Structure
 The project is organized into different components:
-- **Infrastructure Services (`c1` and `c2` folders)**: Each contains Terraform configurations for creating specific infrastructure elements.
+- **Infrastructure Services (`c1` and `c2` files)**: Each contains Terraform configurations for creating specific infrastructure elements.
 - **`code/` folder**: Contains the JavaScript function that is deployed to the Azure Function.
 - **`.tfvars` file**: Defines the values for all necessary variables (properly added to `.gitignore`).
 
