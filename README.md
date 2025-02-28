@@ -96,8 +96,7 @@ const X = 5;
 
 ### Architecture diagram
 
-![image](https://github.com/user-attachments/assets/f9ecd6fe-38e3-4c8c-a7ef-c6d440b34cc0)
-
+![image](https://github.com/user-attachments/assets/e76d41d6-6660-48fc-9aa9-e9e79d9ec959)
 
 This approach ensures load balancing and decouples message producers from consumers, enhancing system scalability, maximize availabily, cost control and reliability.
 
