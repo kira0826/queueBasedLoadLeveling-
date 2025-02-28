@@ -54,7 +54,7 @@ The JavaScript code connects to the Service Bus queue to send a set of messages.
 With this setup, we successfully simulate the **Queue-Based Load Leveling** pattern using **Azure** infrastructure. The system consists of:
 - A **JavaScript application** to send messages:
 
-```
+```hcl
   const { ServiceBusClient } = require("@azure/service-bus");
 
 const connectionString =
